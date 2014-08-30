@@ -1,0 +1,1 @@
+SynchroSphere.jar import departments.xml

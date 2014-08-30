@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="application" class="Main.Application">
+        <property name="logManager" ref="logManager"/>
+        <property name="configProvider" ref="configProvider"/>
+    </bean>
+    <bean id="dao" class="Dao.Impl.Dao">
+        <property name="configProvider" ref="configProvider"/>
+    </bean>
+    <bean id="logManager" class="Utils.Logging.Impl.LogManager" />
+    <bean id="configProvider" class="Utils.Config.Impl.ConfigProvider" />
+    <bean id="xmlManager" class="XmlManager.Impl.XMLManager" />
+    <bean id="xmlExporter" class="Export.Impl.XmlExporter" >
+        <constructor-arg ref="dao"/>
+        <constructor-arg ref="xmlManager"/>
+    </bean>
+    <bean id="xmlImporter" class="Import.Impl.XmlImporter">
+        <constructor-arg ref="dao"/>
+        <constructor-arg ref="xmlManager"/>
+    </bean>
+</beans>
