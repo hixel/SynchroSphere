@@ -1,3 +1,3 @@
 Two-way sync xml <-> db
 
-Stack: java + spring + nhibernate + oracle + maven
+java + spring + nhibernate + oracle + maven
