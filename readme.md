@@ -1,4 +1,3 @@
-Двусторонняя синхронизация данных между базой и XML-файлами.
+Two-way sync xml <-> db
 
-Написано в целях посчупать IoC(Spring) и посмотреть работу с XML в Java. 
-
+Stack: java + spring + nhibernate + oracle + maven
